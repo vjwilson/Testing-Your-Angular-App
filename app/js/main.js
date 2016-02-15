@@ -38,7 +38,8 @@
       .state('state2.list', {
         url: "/list",
         templateUrl: "partials/state2.list.html",
-        controller: 'StateList2Ctrl'
+        controller: 'StateList2Ctrl',
+        controllerAs: 'vm'
       });
   }
 

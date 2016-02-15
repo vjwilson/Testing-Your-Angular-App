@@ -3,10 +3,12 @@
 
   angular.module('cordeliaApp').controller('StateList2Ctrl', StateList2Ctrl);
 
-  StateList2Ctrl.$inject = ['$scope'];
+  StateList2Ctrl.$inject = [];
 
-  function StateList2Ctrl($scope) {
-    $scope.things = ["A", "Set", "Of", "Things"];
+  function StateList2Ctrl() {
+    var vm = this;
+
+    vm.things = ["A", "Set", "Of", "Things"];
   }
 
 })();
