@@ -7,7 +7,7 @@ var jshint      = require('gulp-jshint');
 var uglify      = require('gulp-uglify');
 var concat      = require('gulp-concat');
 var sass        = require('gulp-sass');
-var minifyCSS   = require('gulp-minify-css');
+var cssnano     = require('gulp-cssnano');
 var sourcemaps  = require('gulp-sourcemaps');
 var del         = require('del');
 var runSequence = require('run-sequence');
@@ -42,7 +42,7 @@ gulp.task('sass', function() {
   return gulp.src(paths.src.css)
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(minifyCSS())
+    .pipe(cssnano())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(connect.reload());
