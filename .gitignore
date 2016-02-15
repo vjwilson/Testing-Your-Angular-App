@@ -1,0 +1,6 @@
+node_modules/
+app/bower_components/
+dist/
+
+# TODO: remove this hack to exclude temp files created by discrete gulp tasks
+app.js*
