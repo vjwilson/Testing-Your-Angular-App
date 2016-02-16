@@ -13,12 +13,12 @@ var del         = require('del');
 var runSequence = require('run-sequence');
 
 var paths = {
-  bower:   'app/bower_components/**',
+  bower:   'bower_components/**',
   src: {
     html:  'app/**/*.html',
     css:   'app/scss/**/*.scss',
-    js:    ['app/js/**/*.js',
-            '!app/js/**/*.test.js']
+    js:    ['app/**/*.js',
+            '!app/**/*.test.js']
   }
 };
 
@@ -49,11 +49,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task("js", function() {
-    return gulp.src([
-        'app/js/main.js',
-        'app/js/state1.list.controller.js',
-        'app/js/state2.list.controller.js'
-        ])
+    return gulp.src(paths.src.js)
     .pipe(sourcemaps.init())
     .pipe(concat('app.js'))
     .pipe(uglify())
@@ -64,7 +60,7 @@ gulp.task("js", function() {
 
 gulp.task('copy-bower-components', function () {
   gulp.src(paths.bower)
-    .pipe(gulp.dest('dist/bower_components'));
+    .pipe(gulp.dest('dist/vendor'));
 });
 
 gulp.task('copy-html-files', function () {

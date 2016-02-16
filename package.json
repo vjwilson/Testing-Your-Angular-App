@@ -1,7 +1,7 @@
 {
-  "name": "cordelia",
+  "name": "testing",
   "version": "0.0.1",
-  "description": "Testing gulp with angular, testing directives",
+  "description": "Testing Your Angular App",
   "main": "gulpfile.js",
   "scripts": {
     "postinstall": "bower install",
@@ -10,12 +10,11 @@
   "keywords": [
     "angular",
     "gulp",
-    "directives",
     "testing"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/vjwilson/cordelia.git"
+    "url": "https://github.com/vjwilson/Testing-Your-Angular-App.git"
   },
   "author": "Van J. Wilson",
   "license": "MIT",
