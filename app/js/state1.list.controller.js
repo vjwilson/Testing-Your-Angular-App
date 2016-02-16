@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('cordeliaApp').controller('StateList1Ctrl', StateList1Ctrl);
+  angular.module('testingApp').controller('StateList1Ctrl', StateList1Ctrl);
 
   StateList1Ctrl.$inject = ['$scope'];
 

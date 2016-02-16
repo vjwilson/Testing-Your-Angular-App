@@ -13,7 +13,7 @@ var del         = require('del');
 var runSequence = require('run-sequence');
 
 var paths = {
-  bower:      'app/bower_components/**',
+  bower:   'app/bower_components/**',
   src: {
     html:  'app/**/*.html',
     css:   'app/scss/**/*.scss',

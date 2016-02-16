@@ -3,7 +3,7 @@
 'use strict';
 
 
-  var app = angular.module('cordeliaApp', ['ui.router', 'ngAnimate']);
+  var app = angular.module('testingApp', ['ui.router', 'ngAnimate']);
 
   /* Configuration */
 
@@ -44,7 +44,7 @@
   }
 
   //Load controller
-  angular.module('cordeliaApp')
+  angular.module('testingApp')
 
   .controller('MainController', [
     '$scope',

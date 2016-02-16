@@ -5,7 +5,7 @@ describe('state2 list controller', function() {
   var scope;
   var state2ListController;
 
-  beforeEach( module( 'cordeliaApp' ) );
+  beforeEach( module( 'testingApp' ) );
 
   beforeEach(inject( function( $controller, $rootScope ) {
     scope = $rootScope.$new();

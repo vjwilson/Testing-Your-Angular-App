@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  angular.module('cordeliaApp').controller('StateList2Ctrl', StateList2Ctrl);
+  angular.module('testingApp').controller('StateList2Ctrl', StateList2Ctrl);
 
   StateList2Ctrl.$inject = [];
 
