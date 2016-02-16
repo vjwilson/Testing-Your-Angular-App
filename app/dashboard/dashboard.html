@@ -1,4 +1,18 @@
 <!-- partials/dashboard.html -->
 <h1>Sample App</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Endpoint Name</th>
+        <th>Endpoint URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in vm.itemKeys">
+        <td>{{item}}</td>
+        <td>{{vm.items[item]}}</td>
+      </tr>
+    </tbody>
+  </table>
 <hr/>
 <div ui-view></div>

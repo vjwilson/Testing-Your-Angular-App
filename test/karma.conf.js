@@ -13,13 +13,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'app/bower_components/angular/angular.min.js',
-      'app/bower_components/angular-animate/angular-animate.min.js',
-      'app/bower_components/angular-ui-router/release/angular-ui-router.min.js',
-      'app/bower_components/jquery/dist/jquery.min.js',
-      'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/js/**/*.js'
+      'bower_components/angular/angular.min.js',
+      'bower_components/angular-animate/angular-animate.min.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.min.js',
+      'bower_components/jquery/dist/jquery.min.js',
+      'bower_components/bootstrap/dist/js/bootstrap.min.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      'app/**/*.js'
     ],
 
     // list of files to exclude
