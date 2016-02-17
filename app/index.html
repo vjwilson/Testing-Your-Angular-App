@@ -14,13 +14,42 @@
   </head>
   <body>
     <div class="container">
+
+      <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="dashboard">Testing Angular</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a ui-sref="dashboard">Home</a></li>
+              <li><a ui-sref="state1">State 1</a></li>
+              <li><a ui-sref="state2">State 2</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+
       <!-- views -->
       <div ui-view></div>
-      <!-- We'll also add some navigation: -->
-      <a ui-sref="dashboard">Dashboard</a>
-      <a ui-sref="state1">State 1</a>
-      <a ui-sref="state2">State 2</a>
+
     </div>
+
+    <footer class="simple-footer">
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default"><a ui-sref="dashboard">Dashboard</a></button>
+        <button type="button" class="btn btn-default"><a ui-sref="state1">State 1</a></button>
+        <button type="button" class="btn btn-default"><a ui-sref="state2">State 2</a></button>
+      </div>
+    </footer>
+
     <!-- scripts -->
     <script src="vendor/jquery/dist/jquery.js"></script>
     <script src="vendor/angular/angular.js"></script>

@@ -1,0 +1,10 @@
+.navbar-default {
+  .navbar-brand {
+    color: $purple;
+
+    &:hover {
+      background-color: $purple;
+      color: #fff;
+    }
+  }
+}
