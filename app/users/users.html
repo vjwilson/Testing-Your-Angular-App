@@ -12,7 +12,7 @@
     <tbody>
       <tr ng-repeat="user in vm.users">
         <td><img class="avatar" ng-src="{{user.avatar_url}}" alt="{{user.login}} avatar" /></td>
-        <td>{{user.login}}</td>
+        <td><a ui-sref="users.detail({ userLogin: user.login })">{{user.login}}</a></td>
         <td><a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></td>
         <td>{{user.site_admin}}</td>
       </tr>

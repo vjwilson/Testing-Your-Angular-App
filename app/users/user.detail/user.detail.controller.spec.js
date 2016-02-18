@@ -20,8 +20,8 @@ describe('user detail controller', function() {
   });
 
   it( 'should have a list of items', function() {
-    expect(scope.items).toBeDefined();
-    expect(scope.items.length).toBeGreaterThan(0);
+    expect(scope.user).toBeDefined();
+    expect(Object.keys(scope.user).length).toBeGreaterThan(0);
   });
 
 });
