@@ -19,8 +19,8 @@ describe('users controller', function() {
   });
 
   it( 'should have a list of items', function() {
-    expect(UsersCtrl.items).toBeDefined();
-    expect(UsersCtrl.items.length).toBeGreaterThan(0);
+    expect(UsersCtrl.users).toBeDefined();
+    expect(UsersCtrl.users.length).toBeGreaterThan(0);
   });
 
 });

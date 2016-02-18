@@ -6,3 +6,18 @@
   padding: 2.5rem 0;
   text-align: center;
 }
+
+.avatar {
+  height: 230px;
+  width: 230px;
+}
+
+.table-condensed {
+  tbody {
+    tr {
+      td {
+        vertical-align: middle;
+      } 
+    }
+  }
+}

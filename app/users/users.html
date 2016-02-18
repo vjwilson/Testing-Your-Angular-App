@@ -1,5 +1,23 @@
 <!-- users.html -->
 <h1>GitHub Users</h1>
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>Avatar</th>
+        <th>User Login</th>
+        <th>Profile Page</th>
+        <th>Admin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in vm.users">
+        <td><img class="avatar" ng-src="{{user.avatar_url}}" alt="{{user.login}} avatar" /></td>
+        <td>{{user.login}}</td>
+        <td><a href="{{user.html_url}}" target="_blank">{{user.html_url}}</a></td>
+        <td>{{user.site_admin}}</td>
+      </tr>
+    </tbody>
+  </table>
 <hr/>
 <a ui-sref="users.detail">Show List</a>
 <div ui-view></div>
