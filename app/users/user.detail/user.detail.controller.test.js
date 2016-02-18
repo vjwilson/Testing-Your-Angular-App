@@ -1,22 +1,22 @@
 'use strict';
 
-describe('state1 list controller', function() {
+describe('user detail controller', function() {
 
   var scope;
-  var state1ListController;
+  var UserDetailCtrl;
 
   beforeEach( module( 'testingApp' ) );
 
   beforeEach(inject( function( $controller, $rootScope ) {
     scope = $rootScope.$new();
 
-    state1ListController = $controller('StateList1Ctrl', {
+    UserDetailCtrl = $controller('UserDetailCtrl', {
       $scope: scope
     });
   }));
 
   it( 'should be defined', function() {
-    expect(state1ListController).toBeDefined();
+    expect(UserDetailCtrl).toBeDefined();
   });
 
   it( 'should have a list of items', function() {
