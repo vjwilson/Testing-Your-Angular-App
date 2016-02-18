@@ -1,0 +1,37 @@
+.view-state.ng-enter,
+.view-state.ng-leave {
+  -webkit-transition:all .5s ease-in-out;
+  -moz-transition:all .5s ease-in-out;
+  -o-transition:all .5s ease-in-out;
+  transition:all .5s ease-in-out;
+}
+
+.view-state.ng-enter {
+  opacity: 0;
+  -webkit-transform:scale3d(0.5, 0.5, 0.5);
+  -moz-transform:scale3d(0.5, 0.5, 0.5);
+  transform:scale3d(0.5, 0.5, 0.5);
+}
+
+.view-state.ng-enter-active {
+  opacity: 1;
+  -webkit-transform:scale3d(1, 1, 1);
+  -moz-transform:scale3d(1, 1, 1);
+  transform:scale3d(1, 1, 1);
+}
+
+.view-state.ng-leave {
+  opacity: 1;
+  /*padding-left: 0px;*/  
+  -webkit-transform:translate3d(0, 0, 0);
+  -moz-transform:translate3d(0, 0, 0);
+  transform:translate3d(0, 0, 0);
+}
+
+.view-state.ng-leave-active {
+  opacity: 0;
+  /*padding-left: 100px;*/
+  -webkit-transform:translate3d(100px, 0, 0);
+  -moz-transform:translate3d(100px, 0, 0);
+  transform:translate3d(100px, 0, 0);
+}
