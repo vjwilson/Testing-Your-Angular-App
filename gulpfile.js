@@ -18,7 +18,7 @@ var paths = {
     html:  'app/**/*.html',
     css:   'app/scss/**/*.scss',
     js:    ['app/**/*.js',
-            '!app/**/*.test.js']
+            '!app/**/*.spec.js']
   }
 };
 
