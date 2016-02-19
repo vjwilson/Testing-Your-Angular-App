@@ -1,4 +1,18 @@
 <!-- emojis.html -->
-<h1>Emojis</h1>
+<h1>GitHub Emojis</h1>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Emoji Symbol</th>
+      <th>Emoji Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="emoji in vm.emojis">
+      <td><img class="emoji" ng-src="{{emoji.emojiUrl}}" alt="{{emoji.name}} emoji" /></td>
+      <td><a ui-sref="emojis-detail({ emojiName: emoji.name })">{{emoji.name}}</a></td>
+    </tr>
+  </tbody>
+</table>
 <hr/>
 <a ui-sref="emojis-detail">Show List</a>
