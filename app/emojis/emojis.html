@@ -10,9 +10,8 @@
   <tbody>
     <tr ng-repeat="emoji in vm.emojis">
       <td><img class="emoji" ng-src="{{emoji.emojiUrl}}" alt="{{emoji.name}} emoji" /></td>
-      <td><a ui-sref="emojis-detail({ emojiName: emoji.name })">{{emoji.name}}</a></td>
+      <td><a ng-href="{{emoji.emojiUrl}}" target="_blank">{{emoji.name}}</a></td>
     </tr>
   </tbody>
 </table>
 <hr/>
-<a ui-sref="emojis-detail">Show List</a>
