@@ -7,10 +7,16 @@
 
   function githubEmojisService() {
     var service = {
+      findAllEmojis: findAllEmojis
     };
 
     return service;
 
+    function findAllEmojis() {
+      var emojis = undefined;
+
+      return emojis;
+    }
   }
   
 })();
