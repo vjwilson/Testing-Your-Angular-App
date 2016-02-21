@@ -19,7 +19,7 @@ describe('github users service', function() {
     var emojiKeys = Object.keys(emojis);
     expect(emojiKeys.indexOf('thumbsup')).toBeGreaterThan(-1);
 
-    var imageUrlRegex = /^https?:\/\/.*(jpe?g|gif|png)$/;
+    var imageUrlRegex = /^https?:\/\/.*(jpe?g|gif|png)(\?.*)?$/;
     var isImageUrl = imageUrlRegex.test(emojis[emojiKeys[0]]);
     expect(isImageUrl).toBeTruthy();
   });
