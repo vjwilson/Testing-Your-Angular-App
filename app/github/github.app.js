@@ -3,7 +3,7 @@
 'use strict';
 
   angular.module('github', [
-    'github.api',
+    'github.endpoints',
     'github.users',
     'github.emojis'
   ]);

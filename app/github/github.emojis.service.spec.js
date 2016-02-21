@@ -1,6 +1,6 @@
 'use strict';
 
-describe('github users service', function() {
+describe('github emojis service', function() {
 
   var githubEmojisService;
 
