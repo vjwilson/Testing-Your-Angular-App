@@ -15,8 +15,7 @@
     function activate() {
       githubEndpointsService.findAllEndpoints()
         .then(function(response) {
-          vm.items = response.data;
-          vm.itemKeys = Object.keys(vm.items);
+          vm.items = response;
         })
         .catch(function(error) {
           console.log(error);

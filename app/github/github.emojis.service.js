@@ -3,7 +3,7 @@
 'use strict';
 
   angular.module('github.emojis', [])
-    .service('githubEmojisService', githubEmojisService);
+    .factory('githubEmojisService', githubEmojisService);
 
   function githubEmojisService() {
     var service = {

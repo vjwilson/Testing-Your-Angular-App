@@ -8,9 +8,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="item in vm.itemKeys">
-        <td>{{item}}</td>
-        <td>{{vm.items[item]}}</td>
+      <tr ng-repeat="item in vm.items">
+        <td>{{item.name}}</td>
+        <td>{{item.url}}</td>
       </tr>
     </tbody>
   </table>
