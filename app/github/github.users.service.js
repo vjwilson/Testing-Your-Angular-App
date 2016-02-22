@@ -3,7 +3,7 @@
 'use strict';
 
   angular.module('github.users', [])
-    .service('githubUsersService', githubUsersService);
+    .factory('githubUsersService', githubUsersService);
 
   function githubUsersService() {
     var service = {

@@ -3,12 +3,27 @@
 describe('github api service', function() {
 
   var githubEndpointsService;
+  var httpBackend;
 
   beforeEach( module( 'github.endpoints' ) );
 
-  beforeEach(inject( function( _githubEndpointsService_ ) {
+  beforeEach(inject( function( _githubEndpointsService_, $httpBackend ) {
     githubEndpointsService = _githubEndpointsService_;
+    httpBackend = $httpBackend;
+
+    httpBackend.whenGET("https://api.github.com/").respond({
+        authorizations_url: "https://api.github.com/authorizations",
+        code_search_url: "https://api.github.com/search/code?q={query}{&page,per_page,sort,order}",
+        current_user_authorizations_html_url: "https://github.com/settings/connections/applications{/client_id}",
+        current_user_repositories_url: "https://api.github.com/user/repos{?type,page,per_page,sort}",
+        current_user_url: "https://api.github.com/user"
+    });
+
   }));
+
+  afterEach(function() {
+    httpBackend.flush();
+  });
 
   /**
    * we are using an undocumented feature of Jasmine here
@@ -21,11 +36,11 @@ describe('github api service', function() {
     var endpoints;
 
     githubEndpointsService.findAllEndpoints()
-      .then(function(respone) {
+      .then(function(response) {
         endpoints = response.data;
 
         // the follow logger shows whether this block is ever called or not
-        //   (Spoiler! it's not)
+        //   (Now it is!)
         console.log('in then block, endpoints: ', endpoints);
 
         expect(typeof endpoints).toEqual('object', 'but the service did not return an object');
@@ -37,6 +52,7 @@ describe('github api service', function() {
         var isEndpointUrl = endpointUrlRegex.test(endpoints[endpointKeys[0]]);
         expect(isEndpointUrl).toBeTruthy('but the endpoint URL is not in the correct format');
       });
+
   });
 
 });

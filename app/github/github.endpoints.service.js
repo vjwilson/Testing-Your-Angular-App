@@ -3,7 +3,7 @@
 'use strict';
 
   angular.module('github.endpoints', [])
-    .service('githubEndpointsService', githubEndpointsService);
+    .factory('githubEndpointsService', githubEndpointsService);
 
     githubEndpointsService.$inject = ['$http'];
 
