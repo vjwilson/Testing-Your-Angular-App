@@ -20,15 +20,23 @@ describe('github api service', function() {
   it( 'should return an object with endpoint names as keys and endpoint URLs as values', function() {
     var endpoints;
 
-    endpoints = githubEndpointsService.findAllEndpoints();
-    expect(typeof endpoints).toEqual('object', 'but the service did not return an object');
+    githubEndpointsService.findAllEndpoints()
+      .then(function(respone) {
+        endpoints = response.data;
 
-    var endpointKeys = Object.keys(endpoints);
-    expect(endpointKeys.indexOf('current_user_url')).toBeGreaterThan(-1, 'but could not find a key of "current_user_url"');
+        // the follow logger shows whether this block is ever called or not
+        //   (Spoiler! it's not)
+        console.log('in then block, endpoints: ', endpoints);
 
-    var endpointUrlRegex = /^https:\/\/api\.github\.com\/.*$/;
-    var isEndpointUrl = endpointUrlRegex.test(endpoints[endpointKeys[0]]);
-    expect(isEndpointUrl).toBeTruthy('but the endpoint URL is not in the correct format');
+        expect(typeof endpoints).toEqual('object', 'but the service did not return an object');
+
+        var endpointKeys = Object.keys(endpoints);
+        expect(endpointKeys.indexOf('current_user_url')).toBeGreaterThan(-1, 'but could not find a key of "current_user_url"');
+
+        var endpointUrlRegex = /^https:\/\/api\.github\.com\/.*$/;
+        var isEndpointUrl = endpointUrlRegex.test(endpoints[endpointKeys[0]]);
+        expect(isEndpointUrl).toBeTruthy('but the endpoint URL is not in the correct format');
+      });
   });
 
 });
