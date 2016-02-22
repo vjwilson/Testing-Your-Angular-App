@@ -8,9 +8,21 @@
   function DashboardCtrl(githubEndpointsService) {
     var vm = this;
 
-    vm.items = githubEndpointsService.findAllEndpoints();
+    vm.items = {};
 
-    vm.itemKeys = Object.keys(vm.items);
+    activate();
+
+    function activate() {
+      githubEndpointsService.findAllEndpoints()
+        .then(function(response) {
+          vm.items = response.data;
+          vm.itemKeys = Object.keys(vm.items);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+
   }
 
 })();

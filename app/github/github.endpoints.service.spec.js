@@ -24,7 +24,7 @@ describe('github api service', function() {
     expect(typeof endpoints).toEqual('object', 'but the service did not return an object');
 
     var endpointKeys = Object.keys(endpoints);
-    expect(endpointKeys.indexOf('current_user_url')).toBeGreaterThan(-1, 'but could not find a key of "current_usre_url"');
+    expect(endpointKeys.indexOf('current_user_url')).toBeGreaterThan(-1, 'but could not find a key of "current_user_url"');
 
     var endpointUrlRegex = /^https:\/\/api\.github\.com\/.*$/;
     var isEndpointUrl = endpointUrlRegex.test(endpoints[endpointKeys[0]]);
