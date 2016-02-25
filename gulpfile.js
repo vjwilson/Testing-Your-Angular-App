@@ -11,6 +11,7 @@ var cssnano     = require('gulp-cssnano');
 var sourcemaps  = require('gulp-sourcemaps');
 var del         = require('del');
 var runSequence = require('run-sequence');
+var es6Promise = require('es6-promise').polyfill();
 
 var paths = {
   bower:   'bower_components/**',
