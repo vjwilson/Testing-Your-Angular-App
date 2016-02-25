@@ -8,7 +8,17 @@
   function UsersCtrl(githubUsersService) {
     var vm = this;
 
-    vm.users = githubUsersService.findAllUsers();
+    activate();
+
+    function activate() {
+      githubUsersService.findAllUsers()
+        .then(function(response) {
+          vm.users = response;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
 
   }
 
