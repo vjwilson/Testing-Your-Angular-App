@@ -5,7 +5,7 @@
   angular.module('github.endpoints', [])
     .factory('githubEndpointsService', githubEndpointsService);
 
-    githubEndpointsService.$inject = ['$http', '$q'];
+  githubEndpointsService.$inject = ['$http', '$q'];
 
   function githubEndpointsService($http, $q) {
     var service = {
@@ -17,7 +17,7 @@
     function findAllEndpoints() {
       var deferred = $q.defer();
 
-      $http.get('https://api.github.com/')
+      $http.get('https://api.github.com')
         .then(function(response) {
           var itemObj = response.data;
 

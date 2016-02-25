@@ -26,7 +26,7 @@ describe('github api service', function() {
    * See: https://github.com/jasmine/jasmine/issues/641#issuecomment-54736801
    */
   it( 'should return an object with endpoint names as keys and endpoint URLs as values', function() {
-    var getAllUrl = 'https://api.github.com/';
+    var getAllUrl = 'https://api.github.com';
     var endpoints;
 
     httpBackend.whenGET(getAllUrl).respond({

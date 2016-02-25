@@ -3,25 +3,49 @@
 describe('github emojis service', function() {
 
   var githubEmojisService;
+  var httpBackend;
 
   beforeEach( module( 'github.emojis' ) );
 
-  beforeEach(inject( function( _githubEmojisService_ ) {
+  beforeEach(inject( function( _githubEmojisService_, $httpBackend ) {
     githubEmojisService = _githubEmojisService_;
+    httpBackend = $httpBackend;
   }));
 
-  it( 'should return an object with emoji names as keys and image URLs as values', function() {
+  afterEach(function() {
+    httpBackend.flush();
+    httpBackend.verifyNoOutstandingExpectation();
+    httpBackend.verifyNoOutstandingRequest();
+  });
+
+  it( 'should return an array of emoji object with names and image URLs', function() {
+    var getAllUrl = 'https://api.github.com/emojis';
     var emojis;
 
-    emojis = githubEmojisService.findAllEmojis();
-    expect(typeof emojis).toEqual('object');
+    httpBackend.whenGET(getAllUrl).respond({
+      "100": "https://assets-cdn.github.com/images/icons/emoji/unicode/1f4af.png?v5",
+      "1234": "https://assets-cdn.github.com/images/icons/emoji/unicode/1f522.png?v5",
+      "+1": "https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png?v5",
+      "-1": "https://assets-cdn.github.com/images/icons/emoji/unicode/1f44e.png?v5",
+    });
 
-    var emojiKeys = Object.keys(emojis);
-    expect(emojiKeys.indexOf('thumbsup')).toBeGreaterThan(-1);
+    httpBackend.expectGET(getAllUrl);
 
-    var imageUrlRegex = /^https?:\/\/.*(jpe?g|gif|png)(\?.*)?$/;
-    var isImageUrl = imageUrlRegex.test(emojis[emojiKeys[0]]);
-    expect(isImageUrl).toBeTruthy();
+    githubEmojisService.findAllEmojis()
+      .then(function(response) {
+        emojis = response;
+
+        expect(emojis.constructor).toEqual(Array);
+
+        var testArray = emojis.filter(function(emoji) {
+          return emoji.name === '+1';
+        });
+        expect(testArray.length).toEqual(1);
+
+        var imageUrlRegex = /^https?:\/\/.*(jpe?g|gif|png)(\?.*)?$/;
+        var isImageUrl = imageUrlRegex.test(emojis[0].emojiUrl);
+        expect(isImageUrl).toBeTruthy();
+      });
   });
 
 });
