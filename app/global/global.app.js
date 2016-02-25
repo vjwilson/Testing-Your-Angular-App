@@ -3,7 +3,8 @@
 'use strict';
 
   angular.module('global', [
-    'global.filters'
+    'global.filters',
+    'tyaa-emjoi.directive'
   ]);
   
 })();

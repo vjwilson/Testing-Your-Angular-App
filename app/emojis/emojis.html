@@ -2,10 +2,7 @@
 <h1>GitHub Emojis</h1>
 <div class="flex__container">
   <article class="flex__item" ng-repeat="emoji in vm.emojis">
-    <a ng-href="{{emoji.emojiUrl}}" target="_blank">
-      <img class="emoji" ng-src="{{emoji.emojiUrl}}" alt="{{emoji.name}} emoji" />
-      <figcaption>{{emoji.name}}</figcaption>
-    </a>
+    <tyaa-emjoi emoji="emoji"></tyaa-emjoi>
   </article>
 </div>
 <hr/>
