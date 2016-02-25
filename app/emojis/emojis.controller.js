@@ -8,14 +8,17 @@
   function EmojisCtrl(githubEmojisService) {
     var vm = this;
 
-    vm.emojis = githubEmojisService.findAllEmojis();
+    activate();
 
-    vm.emojis = Object.keys(vm.emojis).map(function(key) {
-      return {
-        name: key,
-        emojiUrl: vm.emojis[key]
-      };
-    });
+    function activate() {
+      githubEmojisService.findAllEmojis()
+        .then(function(response) {
+          vm.emojis = response;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
 
   }
 
